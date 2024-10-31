@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(25)
     );
 
-CREATE TABLE IF NOT EXISTS dispositivos (
+    CREATE TABLE IF NOT EXISTS dispositivos (
     id SERIAL PRIMARY KEY,
     codeText VARCHAR(100),
     location VARCHAR(100),
