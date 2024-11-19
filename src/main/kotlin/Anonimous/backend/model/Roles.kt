@@ -8,8 +8,8 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "dispositivos")
-class Devices {
+@Table(name = "roles")
+class Roles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)
@@ -18,22 +18,9 @@ class Devices {
     @Column(name = "codeText", nullable = false, length = 8)
     var codeText: String? = null
 
-    @Column(name = "latitud")
-    var latitud: Double? = null
+    @Column(name = "name_rol", nullable = false, length = 50)
+    var nameRol: String? = null
 
-    @Column(name = "longitud")
-    var longitud: Double? = null
-
-
-    @Column(name = "nivel_capacidad")
-    var nivelCapacidad: Int? = null
-
-    @Column(name = "dateCreacion")
-    var dateCreacion: String? = null
-
-    @Column(name = "estado")
-    var estado: String? = null
-
-    @Column(name = "last_mantenimiento")
-    var lastMantenimiento: String? = null
+    @Column(name = "description", nullable = false, length = 1000)
+    var description: String? = null
 }

@@ -10,8 +10,8 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "users")
-class Users {
+@Table(name = "containers")
+class Containers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)
@@ -20,20 +20,14 @@ class Users {
     @Column(name = "codeText", nullable = false, length = 8)
     var codeText: String? = null
 
-    @Column(name = "fullname", nullable = false, length = 50)
-    var fullname: String? = null
+    @Column(name = "capacidad")
+    var capacidad: Int? = null
 
-    @Column(name = "cedula", nullable = false)
-    var cedula: Int? = null
-
-    @Column(name = "email", nullable = false, length = 50)
-    var email: String? = null
-
-    @Column(name = "password", nullable = false, length = 25)
-    var password: String? = null
+    @Column(name = "last_emptying")
+    var lastEmptying: String? = null
 
     @ManyToOne
-    @JoinColumn(name = "roll_id", referencedColumnName = "id")
-    var role: Roles? = null
+    @JoinColumn(name = "id_dispositivo", referencedColumnName = "id")
+    var dispositivo: Devices? = null
 
 }
