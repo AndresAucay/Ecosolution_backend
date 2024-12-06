@@ -1,5 +1,6 @@
 package Anonimous.backend.service
 
+import Anonimous.backend.model.Roles
 import Anonimous.backend.model.Users
 import Anonimous.backend.repository.UsersRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +13,18 @@ class UsersService {
     @Autowired
     lateinit var usersRepository: UsersRepository
 
-    fun list(): List<Users> = usersRepository.findAll()
+    fun list(): List<Users> {
+        val usersList = usersRepository.findAll()
+        // Modificar directamente los roles para devolver solo el nombre
+        usersList.forEach { user ->
+            user.role?.apply {
+                // Solo devolver el nameRol, no el objeto completo
+                user.role = Roles().apply { nameRol = this@apply.nameRol }
+            }
+        }
+        return usersList
+    }
+
 
     fun save(user: Users): Users {
         return try {

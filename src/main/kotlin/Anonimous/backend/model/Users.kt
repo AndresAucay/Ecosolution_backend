@@ -17,7 +17,7 @@ class Users {
     @Column(updatable = false)
     var id: Long? = null
 
-    @Column(name = "codeText", nullable = false, length = 8)
+    @Column(name = "code_text", nullable = false, length = 8)
     var codeText: String? = null
 
     @Column(name = "fullname", nullable = false, length = 50)

@@ -1,7 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS roles (
     id SERIAL PRIMARY KEY,
-    codeText CHAR(8) NOT NULL,
+    code_text CHAR(8) NOT NULL,
     name_rol VARCHAR(50) NOT NULL,
     description VARCHAR(1000) NOT NULL
     );
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS roles (
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    codeText CHAR(8) NOT NULL,
+    code_text CHAR(8) NOT NULL,
     fullname VARCHAR(50) NOT NULL,
     cedula INT NOT NULL,
     email VARCHAR(50) NOT NULL,
